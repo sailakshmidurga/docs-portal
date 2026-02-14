@@ -1,36 +1,163 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📚 Docs Portal
 
-## Getting Started
+A multi-language, versioned documentation portal built with **Next.js 16**, supporting:
 
-First, run the development server:
+- 🌍 Multi-language documentation (en, es, fr, de)
+- 🗂 Versioned docs (v1, v2, v3)
+- 🔎 Search functionality
+- 📑 Table of Contents (On This Page)
+- 📋 Copy-to-clipboard for code blocks
+- 💬 Feedback submission
+- 🐳 Docker support
+
+---
+
+## 🚀 Tech Stack
+
+- Next.js 16 (App Router)
+- TypeScript
+- Marked (Markdown parser)
+- Docker
+- Tailwind CSS (optional styling)
+
+---
+
+## 📁 Project Structure
+
+```
+
+_docs/
+├── v1/
+├── v2/
+├── v3/
+app/
+├── [locale]/docs/[version]/[slug]/page.tsx
+├── components/
+├── api-reference/
+public/
+└── openapi.json
+Dockerfile
+docker-compose.yml
+
+```
+
+---
+
+## 🌍 Routes
+
+Documentation route format:
+
+```
+
+/{locale}/docs/{version}/{slug}
+
+```
+
+Example:
+
+```
+
+/en/docs/v3/introduction
+
+````
+
+---
+
+## 🛠 Installation
+
+### 1️⃣ Install dependencies
+
+```bash
+npm install
+````
+
+### 2️⃣ Run development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+App runs on:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🐳 Run with Docker
 
-To learn more about Next.js, take a look at the following resources:
+### Build and run:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+docker-compose up --build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+App will be available at:
 
-## Deploy on Vercel
+```
+http://localhost:3000
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📦 Features
+
+### ✅ Multi-language Support
+
+Supports:
+
+* English
+* Spanish
+* French
+* German
+
+### ✅ Version Switching
+
+Switch between:
+
+* v1
+* v2
+* v3
+
+### ✅ Code Copy Feature
+
+One-click copy for installation commands.
+
+### ✅ Feedback Form
+
+Users can submit feedback for documentation pages.
+
+### ✅ Swagger API Reference
+
+Accessible at:
+
+```
+/api-reference
+```
+
+---
+
+## 🔧 Build for Production
+
+```bash
+npm run build
+npm start
+```
+
+---
+
+## 📌 Future Improvements
+
+* Persistent dark/light theme
+* Full-text search indexing
+* Authentication for feedback storage
+* Deployment to Vercel
+
+---
+
+## 👩‍💻 Author
+
+Built as part of a Multi-Language Documentation Portal assignment.
+
+---
